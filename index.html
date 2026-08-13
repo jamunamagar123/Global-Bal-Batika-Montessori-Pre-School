@@ -1,0 +1,2153 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Global Bal Batika Montessori Pre-School | Ranipauwa, Pokhara</title>
+    <meta
+      name="description"
+      content="A magical little world where children learn, play, explore and grow. Global Bal Batika Montessori Pre-School, Ranipauwa, Pokhara — established 2016."
+    />
+
+    <!-- Fonts: Baloo 2 (playful headings) + Poppins (body) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              green: {
+                DEFAULT: "#079447",
+                dark: "#056B35",
+                light: "#EAF7F0",
+                mint: "#D3EFE2",
+              },
+              orange: { DEFAULT: "#F15A24", light: "#FDEAE2" },
+              blue: { DEFAULT: "#17479E", light: "#EAF0FC" },
+              yellow: { DEFAULT: "#F9C74F", light: "#FEF3D6" },
+              cream: { DEFAULT: "#FFF9ED" },
+            },
+            fontFamily: {
+              display: ['"Baloo 2"', "cursive"],
+              body: ["Poppins", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+
+    <style>
+      /* ===== Base ===== */
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        font-family: "Poppins", sans-serif;
+        overflow-x: hidden;
+      }
+      ::selection {
+        background: #f9c74f;
+        color: #17479e;
+      }
+
+      /* ===== Organic blob shapes ===== */
+      .blob {
+        border-radius: 58% 42% 55% 45% / 45% 55% 48% 52%;
+      }
+      .blob-2 {
+        border-radius: 42% 58% 47% 53% / 58% 42% 55% 45%;
+      }
+      .blob-3 {
+        border-radius: 55% 45% 60% 40% / 40% 60% 45% 55%;
+      }
+      .blob-4 {
+        border-radius: 48% 52% 40% 60% / 60% 40% 58% 42%;
+      }
+
+      /* ===== Dotted backgrounds ===== */
+      .dots-cream {
+        background-image: radial-gradient(
+          rgba(7, 148, 71, 0.1) 2px,
+          transparent 2px
+        );
+        background-size: 24px 24px;
+      }
+      .dots-green {
+        background-image: radial-gradient(
+          rgba(255, 255, 255, 0.14) 2px,
+          transparent 2px
+        );
+        background-size: 26px 26px;
+      }
+
+      /* ===== Hand-drawn underline ===== */
+      .squiggle {
+        position: relative;
+        display: inline-block;
+      }
+      .squiggle::after {
+        content: "";
+        position: absolute;
+        left: -2%;
+        right: -2%;
+        bottom: -0.16em;
+        height: 0.3em;
+        background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 160 14'%3E%3Cpath d='M2 8 C 20 2, 34 12, 52 7 S 84 2, 102 8 S 134 11, 158 5' fill='none' stroke='%23F15A24' stroke-width='5' stroke-linecap='round'/%3E%3C/svg%3E")
+          center / 100% 100% no-repeat;
+      }
+      .squiggle-green::after {
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 160 14'%3E%3Cpath d='M2 8 C 20 2, 34 12, 52 7 S 84 2, 102 8 S 134 11, 158 5' fill='none' stroke='%23079447' stroke-width='5' stroke-linecap='round'/%3E%3C/svg%3E");
+      }
+
+      /* ===== Gentle float animations ===== */
+      @keyframes floaty {
+        0%,
+        100% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-12px);
+        }
+      }
+      @keyframes floaty-x {
+        0%,
+        100% {
+          transform: translate(0, 0) rotate(-2deg);
+        }
+        50% {
+          transform: translate(6px, -10px) rotate(2deg);
+        }
+      }
+      @keyframes spin-slow {
+        to {
+          transform: rotate(360deg);
+        }
+      }
+      @keyframes wiggle {
+        0%,
+        100% {
+          transform: rotate(-3deg);
+        }
+        50% {
+          transform: rotate(3deg);
+        }
+      }
+      @keyframes bob {
+        0%,
+        100% {
+          transform: translateY(0) rotate(0);
+        }
+        50% {
+          transform: translateY(-6px) rotate(-1deg);
+        }
+      }
+
+      .anim-floaty {
+        animation: floaty 6s ease-in-out infinite;
+      }
+      .anim-floaty-x {
+        animation: floaty-x 7s ease-in-out infinite;
+      }
+      .anim-spin-slow {
+        animation: spin-slow 42s linear infinite;
+      }
+      .anim-wiggle {
+        animation: wiggle 4s ease-in-out infinite;
+      }
+      .anim-bob {
+        animation: bob 5s ease-in-out infinite;
+      }
+
+      /* ===== Nav link underline ===== */
+      .nav-link {
+        position: relative;
+      }
+      .nav-link::after {
+        content: "";
+        position: absolute;
+        left: 50%;
+        bottom: -6px;
+        width: 0;
+        height: 4px;
+        border-radius: 99px;
+        background: #f15a24;
+        transform: translateX(-50%);
+        transition: width 0.25s ease;
+      }
+      .nav-link:hover::after {
+        width: 100%;
+      }
+
+      /* ===== Playful CTA arrow ===== */
+      .arrow-move {
+        transition: transform 0.25s ease;
+        display: inline-block;
+      }
+      a:hover .arrow-move {
+        transform: translateX(5px);
+      }
+
+      /* ===== Wavy section divider ===== */
+      .wave {
+        display: block;
+        width: 100%;
+        height: auto;
+      }
+      .wave svg {
+        display: block;
+        width: 100%;
+        height: 100%;
+      }
+
+      /* ===== Handwritten label style ===== */
+      .sticker {
+        font-family: "Baloo 2", cursive;
+        transform: rotate(-4deg);
+        box-shadow: 0 6px 18px -6px rgba(7, 148, 71, 0.25);
+      }
+
+      /* ===== Paper texture for scrapbook ===== */
+      .tape {
+        position: absolute;
+        width: 84px;
+        height: 24px;
+        background: rgba(249, 199, 79, 0.55);
+        transform: rotate(-3deg);
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+      }
+
+      /* ===== dashed circle connectors ===== */
+      .dashed-ring {
+        border: 3px dashed rgba(7, 148, 71, 0.35);
+      }
+
+      /* ===== reduced motion ===== */
+      @media (prefers-reduced-motion: reduce) {
+        .anim-floaty,
+        .anim-floaty-x,
+        .anim-spin-slow,
+        .anim-wiggle,
+        .anim-bob {
+          animation: none;
+        }
+      }
+    </style>
+  </head>
+
+  <body class="bg-cream text-slate-700 antialiased">
+    <!-- ============================================================= -->
+    <!-- TOP BAR  (playful announcement strip)                         -->
+    <!-- ============================================================= -->
+    <div class="bg-green text-white text-[13px]">
+      <div
+        class="max-w-6xl mx-auto px-4 sm:px-6 py-2 flex items-center justify-between gap-4"
+      >
+        <p class="flex items-center gap-2">
+          <svg class="w-4 h-4 shrink-0" viewBox="0 0 24 24" fill="currentColor">
+            <path
+              d="M12 2a7 7 0 0 0-4.9 11.9c.5.5.9 1.2.9 2.1h8c0-.9.4-1.6.9-2.1A7 7 0 0 0 12 2zm-1.5 15a1.5 1.5 0 0 0 3 0h-3zM5 3a2 2 0 0 1 2 2 2 2 0 0 1-2 2 2 2 0 0 1-2-2 2 2 0 0 1 2-2zm14 0a2 2 0 0 1 2 2 2 2 0 0 1-2 2 2 2 0 0 1-2-2 2 2 0 0 1 2-2z"
+            />
+          </svg>
+          Growing Little Minds Since 2016
+        </p>
+        <p class="hidden sm:flex items-center gap-2 text-white/90">
+          <svg
+            class="w-4 h-4 shrink-0"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z" />
+            <circle cx="12" cy="10" r="3" />
+          </svg>
+          Ranipauwa, Pokhara
+        </p>
+      </div>
+    </div>
+
+    <!-- ============================================================= -->
+    <!-- NAVBAR                                                        -->
+    <!-- ============================================================= -->
+    <header
+      class="sticky top-0 z-50 bg-white/90 backdrop-blur-md shadow-[0_10px_30px_-18px_rgba(7,148,71,.4)]"
+    >
+      <nav
+        class="max-w-6xl mx-auto px-4 sm:px-6 flex items-center justify-between h-20 gap-4"
+      >
+        <!-- Logo + name -->
+        <a href="#home" class="flex items-center gap-3 shrink-0">
+          <img
+            src="images/logo.png"
+            alt="Global Bal Batika Montessori logo"
+            class="w-12 h-12 md:w-14 md:h-14 rounded-full drop-shadow-md"
+          />
+          <span class="leading-tight">
+            <span
+              class="block font-display font-bold text-lg md:text-xl text-green"
+              >Global Bal Batika</span
+            >
+            <span
+              class="block text-[11px] md:text-xs tracking-[0.18em] uppercase text-blue font-semibold"
+              >Montessori Pre-School</span
+            >
+          </span>
+        </a>
+
+        <!-- Desktop links -->
+        <ul
+          class="hidden lg:flex items-center gap-7 font-medium text-[15px] text-slate-600"
+        >
+          <li>
+            <a href="#home" class="nav-link hover:text-green transition-colors"
+              >Home</a
+            >
+          </li>
+          <li>
+            <a href="#story" class="nav-link hover:text-green transition-colors"
+              >Our Story</a
+            >
+          </li>
+          <li>
+            <a
+              href="#learning"
+              class="nav-link hover:text-green transition-colors"
+              >Learning</a
+            >
+          </li>
+          <li>
+            <a
+              href="#teachers"
+              class="nav-link hover:text-green transition-colors"
+              >Teachers</a
+            >
+          </li>
+          <li>
+            <a
+              href="#adventures"
+              class="nav-link hover:text-green transition-colors"
+              >Little Adventures</a
+            >
+          </li>
+          <li>
+            <a
+              href="#gallery"
+              class="nav-link hover:text-green transition-colors"
+              >Gallery</a
+            >
+          </li>
+        </ul>
+
+        <!-- CTA -->
+        <a
+          href="#contact"
+          class="hidden lg:inline-flex items-center gap-2 bg-green text-white font-display font-semibold px-6 py-3 rounded-full shadow-lg shadow-green/30 hover:bg-green-dark hover:-translate-y-0.5 transition-all"
+        >
+          Join Our Family <span class="arrow-move">→</span>
+        </a>
+
+        <!-- Mobile menu button (visual only for now) -->
+        <button
+          aria-label="Open menu"
+          class="lg:hidden flex flex-col justify-center gap-1.5 w-11 h-11 rounded-2xl bg-green-light border border-green/20 p-2.5"
+        >
+          <span class="block h-[3px] w-full rounded bg-green"></span>
+          <span class="block h-[3px] w-3/4 rounded bg-orange mx-auto"></span>
+          <span class="block h-[3px] w-full rounded bg-blue"></span>
+        </button>
+      </nav>
+    </header>
+
+    <!-- ============================================================= -->
+    <!-- HERO                                                          -->
+    <!-- ============================================================= -->
+    <section id="home" class="relative overflow-hidden dots-cream">
+      <!-- decorative sun -->
+      <svg
+        class="absolute top-8 right-10 md:top-14 md:right-24 w-16 md:w-24 anim-spin-slow text-yellow drop-shadow-sm"
+        viewBox="0 0 64 64"
+        fill="currentColor"
+      >
+        <circle cx="32" cy="32" r="15" />
+        <g stroke="currentColor" stroke-width="4" stroke-linecap="round">
+          <line x1="32" y1="4" x2="32" y2="12" />
+          <line x1="32" y1="52" x2="32" y2="60" />
+          <line x1="4" y1="32" x2="12" y2="32" />
+          <line x1="52" y1="32" x2="60" y2="32" />
+          <line x1="12" y1="12" x2="17.5" y2="17.5" />
+          <line x1="46.5" y1="46.5" x2="52" y2="52" />
+          <line x1="12" y1="52" x2="17.5" y2="46.5" />
+          <line x1="46.5" y1="17.5" x2="52" y2="12" />
+        </g>
+      </svg>
+      <!-- floating stars -->
+      <svg
+        class="absolute top-24 left-6 md:left-14 w-6 md:w-8 anim-bob text-yellow"
+        viewBox="0 0 40 40"
+        fill="currentColor"
+      >
+        <path
+          d="M20 3l5.2 12.4L38 16l-9.6 8.4L31 37l-11-6.6L9 37l2.6-12.6L2 16l12.8-.6z"
+        />
+      </svg>
+      <svg
+        class="absolute bottom-28 left-1/4 w-5 md:w-7 anim-floaty text-orange/80"
+        viewBox="0 0 40 40"
+        fill="currentColor"
+      >
+        <path
+          d="M20 3l5.2 12.4L38 16l-9.6 8.4L31 37l-11-6.6L9 37l2.6-12.6L2 16l12.8-.6z"
+        />
+      </svg>
+      <!-- tiny cloud -->
+      <svg
+        class="absolute top-40 right-5 md:right-10 w-20 md:w-28 text-white opacity-90 anim-floaty-x"
+        viewBox="0 0 80 44"
+        fill="currentColor"
+      >
+        <path
+          d="M22 42h38c11 0 20-9 20-20S71 2 60 2c-3 0-6 .5-8 2C48 1 43 0 38 0 24 0 13 11 13 24c-7 1-12 7-12 14 0 2 .5 4 1.5 4H22z"
+        />
+      </svg>
+
+      <div
+        class="max-w-6xl mx-auto px-4 sm:px-6 pt-14 md:pt-20 pb-28 md:pb-36 grid lg:grid-cols-2 gap-14 lg:gap-8 items-center relative"
+      >
+        <!-- LEFT: copy -->
+        <div class="relative z-10 text-center lg:text-left">
+          <span
+            class="inline-flex items-center gap-2 bg-white border border-green/20 text-green text-xs md:text-sm font-semibold px-4 py-2 rounded-full shadow-sm"
+          >
+            <span class="w-2 h-2 rounded-full bg-orange anim-wiggle"></span>
+            A Montessori School in Ranipauwa, Pokhara
+          </span>
+
+          <h1
+            class="mt-6 font-display font-extrabold text-5xl md:text-6xl xl:text-7xl leading-[1.05] text-slate-800"
+          >
+            Where <span class="squiggle-green text-green">Little Minds</span
+            ><br />
+            Grow <span class="text-orange">Big Dreams</span>.
+          </h1>
+
+          <p
+            class="mt-6 text-base md:text-lg text-slate-500 max-w-md mx-auto lg:mx-0 leading-relaxed"
+          >
+            At Global Bal Batika Montessori, every little question becomes a new
+            adventure.
+          </p>
+
+          <!-- CTAs -->
+          <div
+            class="mt-9 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4"
+          >
+            <a
+              href="#learning"
+              class="inline-flex items-center gap-2 bg-green text-white font-display font-semibold px-8 py-4 rounded-full text-lg shadow-lg shadow-green/30 hover:bg-green-dark hover:-translate-y-1 transition-all"
+            >
+              Explore Our World <span class="arrow-move">→</span>
+            </a>
+            <a
+              href="#admission"
+              class="inline-flex items-center gap-2 bg-transparent border-2 border-blue text-blue font-display font-semibold px-8 py-4 rounded-full text-lg hover:bg-blue hover:text-white hover:-translate-y-1 transition-all"
+            >
+              Start Their Journey
+            </a>
+          </div>
+
+          <!-- trust element -->
+          <p
+            class="mt-8 text-sm md:text-base text-slate-500 inline-flex items-center gap-3 flex-wrap justify-center lg:justify-start"
+          >
+            <span class="text-green">✦</span> A safe
+            <span class="text-slate-300">•</span> caring
+            <span class="text-slate-300">•</span> creative place for little
+            explorers. <span class="text-orange">✦</span>
+          </p>
+        </div>
+
+        <!-- RIGHT: immersive visual -->
+        <div class="relative z-10 mx-auto w-full max-w-md lg:max-w-none">
+          <!-- colorful circles behind -->
+          <div
+            class="absolute -top-8 -left-8 md:-left-14 w-40 md:w-56 h-40 md:h-56 rounded-full bg-yellow/60 anim-bob"
+          ></div>
+          <div
+            class="absolute -bottom-10 -right-6 md:-right-12 w-44 md:w-60 h-44 md:h-60 rounded-full bg-blue/10 anim-floaty"
+          ></div>
+          <div
+            class="absolute top-1/3 -right-4 md:-right-10 w-20 md:w-28 h-20 md:h-28 rounded-full bg-green-light anim-bob"
+          ></div>
+
+          <!-- organic image -->
+          <div
+            class="relative blob-2 overflow-hidden border-8 border-white shadow-2xl shadow-green/20 aspect-[5/4]"
+          >
+            <img
+              src="images/hero-children.jpg"
+              alt="Happy children learning and playing at Global Bal Batika Montessori"
+              class="w-full h-full object-cover"
+            />
+          </div>
+
+          <!-- floating stickers -->
+          <div
+            class="absolute -top-4 -left-4 md:-left-8 sticker bg-green text-white text-sm md:text-base font-display font-semibold px-4 py-2 rounded-2xl anim-floaty"
+          >
+            🌱 Explore
+          </div>
+          <div
+            class="absolute top-10 -right-3 md:-right-8 sticker bg-orange text-white text-sm md:text-base font-display font-semibold px-4 py-2 rounded-2xl anim-floaty-x"
+          >
+            🎨 Create
+          </div>
+          <div
+            class="absolute -bottom-5 left-4 md:left-2 sticker bg-blue text-white text-sm md:text-base font-display font-semibold px-4 py-2 rounded-2xl anim-floaty"
+          >
+            📚 Discover
+          </div>
+          <div
+            class="absolute -bottom-2 right-6 md:right-0 sticker bg-yellow text-slate-800 text-sm md:text-base font-display font-semibold px-4 py-2 rounded-2xl anim-bob"
+          >
+            ❤️ Grow
+          </div>
+
+          <!-- paper aeroplane -->
+          <svg
+            class="absolute -top-6 right-4 md:right-8 w-10 md:w-12 anim-floaty-x text-blue/80"
+            viewBox="0 0 48 48"
+            fill="currentColor"
+          >
+            <path d="M44 8L4 22l14 5 5 14z" opacity=".9" />
+            <path d="M18 27l22-17-12 25-4-6z" opacity=".55" />
+          </svg>
+          <!-- leaf -->
+          <svg
+            class="absolute top-1/4 -left-8 md:-left-14 w-8 md:w-10 anim-bob text-green"
+            viewBox="0 0 48 48"
+            fill="currentColor"
+          >
+            <path
+              d="M40 6C24 6 8 16 8 32c0 4 1 8 2 10 12-1 26-10 30-22-1-6-4-9-10-11z"
+            />
+            <path
+              fill="none"
+              stroke="#FFF9ED"
+              stroke-width="2"
+              d="M20 30c6-8 12-14 20-18"
+            />
+          </svg>
+        </div>
+      </div>
+
+      <!-- wave divider cream -> white -->
+      <div class="absolute inset-x-0 bottom-0 wave" style="color: #fff">
+        <svg
+          viewBox="0 0 1440 90"
+          preserveAspectRatio="none"
+          fill="currentColor"
+        >
+          <path
+            d="M0,70 C180,20 360,90 540,60 C720,30 900,85 1080,55 C1260,25 1350,75 1440,45 L1440,90 L0,90 Z"
+          />
+        </svg>
+      </div>
+    </section>
+
+    <!-- ============================================================= -->
+    <!-- SECTION 2: WELCOME TO OUR LITTLE WORLD                        -->
+    <!-- ============================================================= -->
+    <section id="story" class="relative bg-white py-24 md:py-32">
+      <div
+        class="max-w-6xl mx-auto px-4 sm:px-6 grid lg:grid-cols-2 gap-14 lg:gap-20 items-center"
+      >
+        <!-- copy -->
+        <div>
+          <span
+            class="inline-flex items-center gap-2 text-orange font-display font-semibold text-sm tracking-wide"
+          >
+            <span class="h-0.5 w-8 rounded-full bg-orange"></span> Welcome to
+            our little world
+          </span>
+          <h2
+            class="mt-4 font-display font-bold text-4xl md:text-5xl xl:text-[3.4rem] leading-[1.1] text-slate-800"
+          >
+            Every Child Has a
+            <span class="text-green">Little World</span> Inside Them.
+          </h2>
+          <p class="mt-6 text-slate-500 leading-relaxed text-base md:text-lg">
+            At Bal Batika, we don't fill little minds — we help them unfold. Our
+            Montessori classrooms give each child the freedom to explore, ask
+            questions, create, discover and slowly become wonderfully
+            independent.
+          </p>
+
+          <!-- concept chips -->
+          <ul class="mt-8 flex flex-wrap gap-3">
+            <li
+              class="bg-green-light text-green font-semibold text-sm px-4 py-2 rounded-full"
+            >
+              🔎 Explore
+            </li>
+            <li
+              class="bg-orange-light text-orange font-semibold text-sm px-4 py-2 rounded-full"
+            >
+              ❓ Ask Questions
+            </li>
+            <li
+              class="bg-yellow-light text-amber-700 font-semibold text-sm px-4 py-2 rounded-full"
+            >
+              🎨 Create
+            </li>
+            <li
+              class="bg-blue-light text-blue font-semibold text-sm px-4 py-2 rounded-full"
+            >
+              ✨ Discover
+            </li>
+            <li
+              class="bg-green-light text-green font-semibold text-sm px-4 py-2 rounded-full"
+            >
+              🌱 Become Independent
+            </li>
+          </ul>
+
+          <!-- mini stats -->
+          <div class="mt-10 flex items-center gap-8">
+            <div>
+              <p class="font-display font-bold text-3xl text-green">2016</p>
+              <p class="text-xs text-slate-400 uppercase tracking-wider">
+                Established
+              </p>
+            </div>
+            <div class="h-10 w-px bg-slate-200"></div>
+            <div>
+              <p class="font-display font-bold text-3xl text-orange">
+                Ages 2–6
+              </p>
+              <p class="text-xs text-slate-400 uppercase tracking-wider">
+                Early Years
+              </p>
+            </div>
+            <div class="h-10 w-px bg-slate-200"></div>
+            <div>
+              <p class="font-display font-bold text-3xl text-blue">100%</p>
+              <p class="text-xs text-slate-400 uppercase tracking-wider">
+                Montessori Way
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- visual composition -->
+        <div class="relative mx-auto w-full max-w-md lg:max-w-none">
+          <div
+            class="absolute -top-6 -right-6 md:-right-10 w-40 md:w-52 h-40 md:h-52 rounded-full bg-orange/10 anim-floaty"
+          ></div>
+          <div
+            class="absolute -bottom-8 -left-8 md:-left-12 w-44 md:w-56 h-44 md:h-56 rounded-full bg-green/10 anim-bob"
+          ></div>
+          <svg
+            class="absolute top-8 -left-6 md:-left-12 w-8 md:w-10 text-yellow anim-spin-slow"
+            viewBox="0 0 64 64"
+            fill="currentColor"
+          >
+            <circle cx="32" cy="32" r="15" />
+            <g stroke="currentColor" stroke-width="4" stroke-linecap="round">
+              <line x1="32" y1="4" x2="32" y2="12" />
+              <line x1="32" y1="52" x2="32" y2="60" />
+              <line x1="4" y1="32" x2="12" y2="32" />
+              <line x1="52" y1="32" x2="60" y2="32" />
+            </g>
+          </svg>
+
+          <div
+            class="relative blob overflow-hidden border-8 border-white shadow-2xl shadow-green/15 aspect-[6/5]"
+          >
+            <img
+              src="images/classroom.jpg"
+              alt="A bright Montessori classroom at Global Bal Batika"
+              class="w-full h-full object-cover"
+            />
+          </div>
+
+          <!-- floating note -->
+          <div
+            class="absolute -bottom-6 left-1/2 -translate-x-1/2 sticker bg-white border-2 border-dashed border-green/50 text-green font-display font-semibold text-sm md:text-base px-5 py-3 rounded-2xl whitespace-nowrap anim-floaty"
+          >
+            ✨ “Learning happens everywhere.”
+          </div>
+          <!-- small badge -->
+          <div
+            class="absolute top-4 right-4 md:-right-4 bg-yellow text-slate-800 font-display font-semibold text-sm px-4 py-2 rounded-2xl shadow-md rotate-3 anim-bob"
+          >
+            Curious minds
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================= -->
+    <!-- SECTION 3: MONTESSORI PHILOSOPHY (curved journey)             -->
+    <!-- ============================================================= -->
+    <section
+      id="learning"
+      class="relative bg-green-light py-24 md:py-32 overflow-hidden"
+    >
+      <!-- wave into section -->
+      <div class="absolute inset-x-0 top-0 wave" style="color: #eaf7f0">
+        <svg
+          viewBox="0 0 1440 80"
+          preserveAspectRatio="none"
+          fill="currentColor"
+        >
+          <path
+            d="M0,40 C180,0 360,80 540,50 C720,20 900,75 1080,45 C1260,15 1350,60 1440,30 L1440,80 L0,80 Z"
+          />
+        </svg>
+      </div>
+      <svg
+        class="absolute -bottom-10 right-8 md:right-16 w-24 md:w-32 text-green/10 anim-spin-slow"
+        viewBox="0 0 40 40"
+        fill="currentColor"
+      >
+        <path
+          d="M20 3l5.2 12.4L38 16l-9.6 8.4L31 37l-11-6.6L9 37l2.6-12.6L2 16l12.8-.6z"
+        />
+      </svg>
+
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 pt-10">
+        <div class="text-center max-w-2xl mx-auto">
+          <span
+            class="inline-flex items-center gap-2 text-blue font-display font-semibold text-sm tracking-wide"
+          >
+            <span class="h-0.5 w-8 rounded-full bg-blue"></span> Our Montessori
+            Way <span class="h-0.5 w-8 rounded-full bg-blue"></span>
+          </span>
+          <h2
+            class="mt-4 font-display font-bold text-4xl md:text-5xl xl:text-[3.2rem] leading-[1.1] text-slate-800"
+          >
+            We Don't Just Teach.<br /><span class="squiggle text-orange"
+              >We Let Them Discover.</span
+            >
+          </h2>
+        </div>
+
+        <!-- visual journey: 4 organic stations on a winding path -->
+        <div class="relative mt-20">
+          <!-- curved dashed connector (desktop) -->
+          <svg
+            class="hidden lg:block absolute inset-x-0 top-1/2 -translate-y-1/2 w-full h-56 text-green/40"
+            viewBox="0 0 1200 200"
+            preserveAspectRatio="none"
+            fill="none"
+          >
+            <path
+              d="M90,160 C 240,30 360,190 510,110 S 780,40 900,120 S 1080,160 1160,90"
+              stroke="currentColor"
+              stroke-width="3"
+              stroke-dasharray="10 10"
+              stroke-linecap="round"
+            />
+            <circle cx="90" cy="160" r="7" fill="#079447" />
+            <circle cx="510" cy="110" r="7" fill="#F15A24" />
+            <circle cx="900" cy="120" r="7" fill="#17479E" />
+            <circle cx="1160" cy="90" r="7" fill="#F9C74F" />
+          </svg>
+
+          <div
+            class="grid md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-6 relative z-10"
+          >
+            <!-- Explore -->
+            <div class="lg:-translate-y-4 text-center">
+              <div class="relative inline-block anim-bob">
+                <div
+                  class="w-24 h-24 rounded-full bg-white shadow-lg flex items-center justify-center text-4xl"
+                >
+                  🌱
+                </div>
+                <div class="absolute -inset-2 rounded-full dashed-ring"></div>
+              </div>
+              <h3 class="mt-5 font-display font-bold text-2xl text-green">
+                Explore
+              </h3>
+              <p
+                class="mt-2 text-slate-500 text-sm md:text-base leading-relaxed max-w-[15rem] mx-auto"
+              >
+                Children touch, observe and explore their world with curiosity.
+              </p>
+            </div>
+            <!-- Discover -->
+            <div class="lg:translate-y-6 text-center">
+              <div class="relative inline-block anim-floaty">
+                <div
+                  class="w-24 h-24 rounded-full bg-white shadow-lg flex items-center justify-center text-4xl"
+                >
+                  🔍
+                </div>
+                <div class="absolute -inset-2 rounded-full dashed-ring"></div>
+              </div>
+              <h3 class="mt-5 font-display font-bold text-2xl text-blue">
+                Discover
+              </h3>
+              <p
+                class="mt-2 text-slate-500 text-sm md:text-base leading-relaxed max-w-[15rem] mx-auto"
+              >
+                They find answers through their own hands-on experience.
+              </p>
+            </div>
+            <!-- Create -->
+            <div class="lg:-translate-y-4 text-center">
+              <div class="relative inline-block anim-bob">
+                <div
+                  class="w-24 h-24 rounded-full bg-white shadow-lg flex items-center justify-center text-4xl"
+                >
+                  🎨
+                </div>
+                <div class="absolute -inset-2 rounded-full dashed-ring"></div>
+              </div>
+              <h3 class="mt-5 font-display font-bold text-2xl text-orange">
+                Create
+              </h3>
+              <p
+                class="mt-2 text-slate-500 text-sm md:text-base leading-relaxed max-w-[15rem] mx-auto"
+              >
+                They express themselves through art, craft and imagination.
+              </p>
+            </div>
+            <!-- Grow -->
+            <div class="lg:translate-y-6 text-center">
+              <div class="relative inline-block anim-bob">
+                <div
+                  class="w-24 h-24 rounded-full bg-white shadow-lg flex items-center justify-center text-4xl"
+                >
+                  🌻
+                </div>
+                <div class="absolute -inset-2 rounded-full dashed-ring"></div>
+              </div>
+              <h3 class="mt-5 font-display font-bold text-2xl text-yellow">
+                Grow
+              </h3>
+              <p
+                class="mt-2 text-slate-500 text-sm md:text-base leading-relaxed max-w-[15rem] mx-auto"
+              >
+                They become confident, kind and wonderfully independent.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- wave out to white -->
+      <div class="absolute inset-x-0 bottom-0 wave" style="color: #fff">
+        <svg
+          viewBox="0 0 1440 80"
+          preserveAspectRatio="none"
+          fill="currentColor"
+        >
+          <path
+            d="M0,45 C180,80 360,10 540,35 C720,60 900,5 1080,30 C1260,55 1350,10 1440,40 L1440,80 L0,80 Z"
+          />
+        </svg>
+      </div>
+    </section>
+
+    <!-- ============================================================= -->
+    <!-- SECTION 4: A DAY IN OUR LITTLE WORLD (timeline)               -->
+    <!-- ============================================================= -->
+    <section id="adventures" class="relative bg-white py-24 md:py-32">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6">
+        <div class="text-center max-w-2xl mx-auto">
+          <span
+            class="inline-flex items-center gap-2 text-green font-display font-semibold text-sm tracking-wide"
+          >
+            <span class="h-0.5 w-8 rounded-full bg-green"></span> A little day,
+            a big story <span class="h-0.5 w-8 rounded-full bg-green"></span>
+          </span>
+          <h2
+            class="mt-4 font-display font-bold text-4xl md:text-5xl xl:text-[3.2rem] leading-[1.1] text-slate-800"
+          >
+            What Does a Day at <span class="text-orange">Bal Batika</span> Look
+            Like?
+          </h2>
+          <p class="mt-5 text-slate-500 text-base md:text-lg leading-relaxed">
+            From good mornings to happy goodbyes — every moment is gently
+            guided.
+          </p>
+        </div>
+
+        <!-- playful timeline -->
+        <div class="relative mt-16 max-w-3xl mx-auto">
+          <!-- sun -->
+          <svg
+            class="absolute -top-12 left-1/2 -translate-x-1/2 w-14 md:w-16 text-yellow anim-spin-slow"
+            viewBox="0 0 64 64"
+            fill="currentColor"
+          >
+            <circle cx="32" cy="32" r="15" />
+            <g stroke="currentColor" stroke-width="4" stroke-linecap="round">
+              <line x1="32" y1="4" x2="32" y2="12" />
+              <line x1="32" y1="52" x2="32" y2="60" />
+              <line x1="4" y1="32" x2="12" y2="32" />
+              <line x1="52" y1="32" x2="60" y2="32" />
+            </g>
+          </svg>
+          <!-- moon -->
+          <svg
+            class="absolute -bottom-14 left-1/2 -translate-x-1/2 w-12 md:w-14 text-blue/50 anim-bob"
+            viewBox="0 0 64 64"
+            fill="currentColor"
+          >
+            <path d="M44 4a28 28 0 1 0 16 40A30 30 0 0 1 44 4z" />
+          </svg>
+
+          <!-- dashed centre line -->
+          <div
+            class="absolute left-7 md:left-1/2 md:-translate-x-1/2 top-0 bottom-0 w-0 border-l-[3px] border-dashed border-green/25"
+          ></div>
+
+          <ol class="space-y-10 md:space-y-14 relative">
+            <!-- item -->
+            <li class="relative md:flex md:items-center md:gap-10">
+              <div
+                class="absolute left-7 -translate-x-1/2 top-6 md:left-1/2 md:top-1/2 md:-translate-y-1/2 w-6 h-6 rounded-full border-4 border-white bg-orange shadow"
+              ></div>
+              <div class="ml-16 md:ml-0 md:w-[calc(50%-3rem)] md:text-right">
+                <div
+                  class="bg-cream border border-green/15 rounded-3xl p-6 shadow-sm hover:-translate-y-1 hover:shadow-lg transition-transform -rotate-1"
+                >
+                  <span
+                    class="inline-block bg-orange text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide"
+                    >Morning</span
+                  >
+                  <h3
+                    class="mt-3 font-display font-bold text-xl text-slate-800"
+                  >
+                    🌞 Good Morning
+                  </h3>
+                  <p class="mt-1.5 text-sm text-slate-500 leading-relaxed">
+                    Children arrive, greet their friends and settle into their
+                    classroom.
+                  </p>
+                </div>
+              </div>
+              <div class="hidden md:block md:w-[calc(50%-3rem)]"></div>
+            </li>
+            <!-- item -->
+            <li class="relative md:flex md:items-center md:gap-10">
+              <div
+                class="absolute left-7 -translate-x-1/2 top-6 md:left-1/2 md:top-1/2 md:-translate-y-1/2 w-6 h-6 rounded-full border-4 border-white bg-green shadow"
+              ></div>
+              <div class="hidden md:block md:w-[calc(50%-3rem)]"></div>
+              <div class="ml-16 md:ml-0 md:w-[calc(50%-3rem)]">
+                <div
+                  class="bg-cream border border-green/15 rounded-3xl p-6 shadow-sm hover:-translate-y-1 hover:shadow-lg transition-transform rotate-1"
+                >
+                  <span
+                    class="inline-block bg-green text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide"
+                    >Explore</span
+                  >
+                  <h3
+                    class="mt-3 font-display font-bold text-xl text-slate-800"
+                  >
+                    🧩 Explore & Learn
+                  </h3>
+                  <p class="mt-1.5 text-sm text-slate-500 leading-relaxed">
+                    Hands-on Montessori activities chosen by each child, guided
+                    with care.
+                  </p>
+                </div>
+              </div>
+            </li>
+            <!-- item -->
+            <li class="relative md:flex md:items-center md:gap-10">
+              <div
+                class="absolute left-7 -translate-x-1/2 top-6 md:left-1/2 md:top-1/2 md:-translate-y-1/2 w-6 h-6 rounded-full border-4 border-white bg-blue shadow"
+              ></div>
+              <div class="ml-16 md:ml-0 md:w-[calc(50%-3rem)] md:text-right">
+                <div
+                  class="bg-cream border border-green/15 rounded-3xl p-6 shadow-sm hover:-translate-y-1 hover:shadow-lg transition-transform -rotate-1"
+                >
+                  <span
+                    class="inline-block bg-blue text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide"
+                    >Create</span
+                  >
+                  <h3
+                    class="mt-3 font-display font-bold text-xl text-slate-800"
+                  >
+                    🎨 Create
+                  </h3>
+                  <p class="mt-1.5 text-sm text-slate-500 leading-relaxed">
+                    Art, craft and creative expression — paint, glue, build and
+                    imagine.
+                  </p>
+                </div>
+              </div>
+              <div class="hidden md:block md:w-[calc(50%-3rem)]"></div>
+            </li>
+            <!-- item -->
+            <li class="relative md:flex md:items-center md:gap-10">
+              <div
+                class="absolute left-7 -translate-x-1/2 top-6 md:left-1/2 md:top-1/2 md:-translate-y-1/2 w-6 h-6 rounded-full border-4 border-white bg-orange shadow"
+              ></div>
+              <div class="hidden md:block md:w-[calc(50%-3rem)]"></div>
+              <div class="ml-16 md:ml-0 md:w-[calc(50%-3rem)]">
+                <div
+                  class="bg-cream border border-green/15 rounded-3xl p-6 shadow-sm hover:-translate-y-1 hover:shadow-lg transition-transform rotate-1"
+                >
+                  <span
+                    class="inline-block bg-orange text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide"
+                    >Move</span
+                  >
+                  <h3
+                    class="mt-3 font-display font-bold text-xl text-slate-800"
+                  >
+                    🎵 Move & Sing
+                  </h3>
+                  <p class="mt-1.5 text-sm text-slate-500 leading-relaxed">
+                    Music, movement, rhythm and lots of joyful singing together.
+                  </p>
+                </div>
+              </div>
+            </li>
+            <!-- item -->
+            <li class="relative md:flex md:items-center md:gap-10">
+              <div
+                class="absolute left-7 -translate-x-1/2 top-6 md:left-1/2 md:top-1/2 md:-translate-y-1/2 w-6 h-6 rounded-full border-4 border-white bg-green shadow"
+              ></div>
+              <div class="ml-16 md:ml-0 md:w-[calc(50%-3rem)] md:text-right">
+                <div
+                  class="bg-cream border border-green/15 rounded-3xl p-6 shadow-sm hover:-translate-y-1 hover:shadow-lg transition-transform -rotate-1"
+                >
+                  <span
+                    class="inline-block bg-green text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide"
+                    >Outdoors</span
+                  >
+                  <h3
+                    class="mt-3 font-display font-bold text-xl text-slate-800"
+                  >
+                    🌿 Outdoor Adventure
+                  </h3>
+                  <p class="mt-1.5 text-sm text-slate-500 leading-relaxed">
+                    Play, climb, run and explore in the fresh air of Pokhara.
+                  </p>
+                </div>
+              </div>
+              <div class="hidden md:block md:w-[calc(50%-3rem)]"></div>
+            </li>
+            <!-- item -->
+            <li class="relative md:flex md:items-center md:gap-10">
+              <div
+                class="absolute left-7 -translate-x-1/2 top-6 md:left-1/2 md:top-1/2 md:-translate-y-1/2 w-6 h-6 rounded-full border-4 border-white bg-blue shadow"
+              ></div>
+              <div class="hidden md:block md:w-[calc(50%-3rem)]"></div>
+              <div class="ml-16 md:ml-0 md:w-[calc(50%-3rem)]">
+                <div
+                  class="bg-cream border border-green/15 rounded-3xl p-6 shadow-sm hover:-translate-y-1 hover:shadow-lg transition-transform rotate-1"
+                >
+                  <span
+                    class="inline-block bg-blue text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide"
+                    >Home time</span
+                  >
+                  <h3
+                    class="mt-3 font-display font-bold text-xl text-slate-800"
+                  >
+                    🌙 Happy Goodbye
+                  </h3>
+                  <p class="mt-1.5 text-sm text-slate-500 leading-relaxed">
+                    Going home with a new story to tell — and a bigger smile.
+                  </p>
+                </div>
+              </div>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================= -->
+    <!-- SECTION 5: PROGRAMS — "CHOOSE YOUR ADVENTURE"                 -->
+    <!-- ============================================================= -->
+    <section id="programs" class="relative bg-cream dots-cream py-24 md:py-32">
+      <!-- wave into section -->
+      <div class="absolute inset-x-0 top-0 wave" style="color: #fff9ed">
+        <svg
+          viewBox="0 0 1440 80"
+          preserveAspectRatio="none"
+          fill="currentColor"
+        >
+          <path
+            d="M0,40 C180,0 360,80 540,50 C720,20 900,75 1080,45 C1260,15 1350,60 1440,30 L1440,80 L0,80 Z"
+          />
+        </svg>
+      </div>
+
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 pt-6">
+        <div class="text-center max-w-2xl mx-auto">
+          <span
+            class="inline-flex items-center gap-2 text-blue font-display font-semibold text-sm tracking-wide"
+          >
+            <span class="h-0.5 w-8 rounded-full bg-blue"></span> Choose your
+            adventure <span class="h-0.5 w-8 rounded-full bg-blue"></span>
+          </span>
+          <h2
+            class="mt-4 font-display font-bold text-4xl md:text-5xl xl:text-[3.2rem] leading-[1.1] text-slate-800"
+          >
+            Every Little Explorer Has
+            <span class="text-green">Their Own Journey</span>.
+          </h2>
+        </div>
+
+        <div
+          class="relative mt-16 grid md:grid-cols-3 gap-8 md:gap-6 items-stretch"
+        >
+          <!-- winding dashed path between (desktop) -->
+          <svg
+            class="hidden md:block absolute inset-x-[12%] top-16 bottom-16 w-[76%] h-auto text-orange/40"
+            viewBox="0 0 900 60"
+            preserveAspectRatio="none"
+            fill="none"
+          >
+            <path
+              d="M20,20 C150,55 300,5 450,30 S 750,55 880,25"
+              stroke="currentColor"
+              stroke-width="3"
+              stroke-dasharray="9 9"
+              stroke-linecap="round"
+            />
+          </svg>
+
+          <!-- Nursery -->
+          <div
+            class="relative z-10 bg-white rounded-[2.5rem] blob-3 overflow-hidden shadow-xl shadow-green/10 hover:-translate-y-2 hover:shadow-2xl transition-all -rotate-1"
+          >
+            <div class="relative">
+              <img
+                src="images/activity-1.jpg"
+                alt="Nursery — Little Discoverers at play"
+                class="w-full h-48 object-cover"
+              />
+              <div
+                class="absolute -bottom-5 left-6 bg-blue text-white font-display font-semibold text-sm px-4 py-1.5 rounded-full shadow-lg"
+              >
+                Nursery
+              </div>
+            </div>
+            <div class="p-6 pt-8">
+              <h3 class="font-display font-bold text-2xl text-blue">
+                Little Discoverers
+              </h3>
+              <p
+                class="mt-1 text-xs font-semibold text-slate-400 uppercase tracking-wider"
+              >
+                Ages 2–3
+              </p>
+              <p class="mt-3 text-sm text-slate-500 leading-relaxed">
+                Tiny hands, big first steps — a gentle introduction to school,
+                songs and friends.
+              </p>
+              <p
+                class="mt-4 inline-flex items-center gap-1.5 text-blue font-display font-semibold text-sm"
+              >
+                First adventures <span class="arrow-move">→</span>
+              </p>
+            </div>
+          </div>
+
+          <!-- LKG -->
+          <div
+            class="relative z-10 bg-white rounded-[2.5rem] blob-2 overflow-hidden shadow-xl shadow-orange/10 hover:-translate-y-2 hover:shadow-2xl transition-all md:translate-y-8 rotate-1"
+          >
+            <div class="relative">
+              <img
+                src="images/activity-3.jpg"
+                alt="LKG — Curious Explorers in story time"
+                class="w-full h-48 object-cover"
+              />
+              <div
+                class="absolute -bottom-5 left-6 bg-orange text-white font-display font-semibold text-sm px-4 py-1.5 rounded-full shadow-lg"
+              >
+                LKG
+              </div>
+            </div>
+            <div class="p-6 pt-8">
+              <h3 class="font-display font-bold text-2xl text-orange">
+                Curious Explorers
+              </h3>
+              <p
+                class="mt-1 text-xs font-semibold text-slate-400 uppercase tracking-wider"
+              >
+                Ages 3–4
+              </p>
+              <p class="mt-3 text-sm text-slate-500 leading-relaxed">
+                Questions, stories and hands-on discovery — building focus and
+                confidence.
+              </p>
+              <p
+                class="mt-4 inline-flex items-center gap-1.5 text-orange font-display font-semibold text-sm"
+              >
+                More exploring <span class="arrow-move">→</span>
+              </p>
+            </div>
+          </div>
+
+          <!-- UKG -->
+          <div
+            class="relative z-10 bg-white rounded-[2.5rem] blob-3 overflow-hidden shadow-xl shadow-blue/10 hover:-translate-y-2 hover:shadow-2xl transition-all -rotate-1"
+          >
+            <div class="relative">
+              <img
+                src="images/activity-4.jpg"
+                alt="UKG — Confident Adventurers outdoors"
+                class="w-full h-48 object-cover"
+              />
+              <div
+                class="absolute -bottom-5 left-6 bg-green text-white font-display font-semibold text-sm px-4 py-1.5 rounded-full shadow-lg"
+              >
+                UKG
+              </div>
+            </div>
+            <div class="p-6 pt-8">
+              <h3 class="font-display font-bold text-2xl text-green">
+                Confident Adventurers
+              </h3>
+              <p
+                class="mt-1 text-xs font-semibold text-slate-400 uppercase tracking-wider"
+              >
+                Ages 4–6
+              </p>
+              <p class="mt-3 text-sm text-slate-500 leading-relaxed">
+                Reading, numbers and independence — ready for school, ready for
+                life.
+              </p>
+              <p
+                class="mt-4 inline-flex items-center gap-1.5 text-green font-display font-semibold text-sm"
+              >
+                Big adventures <span class="arrow-move">→</span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================= -->
+    <!-- SECTION 6: LEARNING THROUGH PLAY (scrapbook collage)          -->
+    <!-- ============================================================= -->
+    <section id="play" class="relative bg-white py-24 md:py-32">
+      <!-- wave into section -->
+      <div class="absolute inset-x-0 top-0 wave" style="color: #fff">
+        <svg
+          viewBox="0 0 1440 80"
+          preserveAspectRatio="none"
+          fill="currentColor"
+        >
+          <path
+            d="M0,45 C180,80 360,10 540,35 C720,60 900,5 1080,30 C1260,55 1350,10 1440,40 L1440,80 L0,80 Z"
+          />
+        </svg>
+      </div>
+
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 pt-6">
+        <div class="text-center max-w-2xl mx-auto">
+          <span
+            class="inline-flex items-center gap-2 text-orange font-display font-semibold text-sm tracking-wide"
+          >
+            <span class="h-0.5 w-8 rounded-full bg-orange"></span> Learning
+            through play <span class="h-0.5 w-8 rounded-full bg-orange"></span>
+          </span>
+          <h2
+            class="mt-4 font-display font-bold text-4xl md:text-5xl xl:text-[3.2rem] leading-[1.1] text-slate-800"
+          >
+            Play Is <span class="squiggle text-green">Serious Learning</span>.
+          </h2>
+          <p class="mt-5 text-slate-500 text-base md:text-lg leading-relaxed">
+            Every song, every brushstroke and every game is carefully chosen to
+            grow little minds.
+          </p>
+        </div>
+
+        <!-- asymmetric scrapbook collage -->
+        <div
+          class="mt-16 grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 items-start"
+        >
+          <!-- Art — big tile -->
+          <figure
+            class="relative col-span-2 md:row-span-2 -rotate-1 hover:rotate-0 transition-transform"
+          >
+            <div class="relative overflow-hidden rounded-[2rem] shadow-lg">
+              <img
+                src="images/activity-1.jpg"
+                alt="Children painting in art class"
+                class="w-full h-56 md:h-full object-cover md:min-h-[22rem]"
+              />
+              <div class="tape left-4 top-3"></div>
+            </div>
+            <figcaption
+              class="sticker absolute bottom-4 left-4 bg-white text-green font-display font-semibold px-4 py-1.5 rounded-full text-sm shadow"
+            >
+              🎨 Art
+            </figcaption>
+          </figure>
+
+          <!-- Music — circle -->
+          <figure class="relative rotate-2 hover:rotate-0 transition-transform">
+            <div
+              class="relative overflow-hidden rounded-full aspect-square shadow-lg"
+            >
+              <img
+                src="images/activity-2.jpg"
+                alt="Children making music"
+                class="w-full h-full object-cover"
+              />
+            </div>
+            <figcaption
+              class="sticker absolute -bottom-2 right-2 bg-white text-blue font-display font-semibold px-4 py-1.5 rounded-full text-sm shadow"
+            >
+              🎵 Music
+            </figcaption>
+          </figure>
+
+          <!-- Stories — blob -->
+          <figure
+            class="relative -mt-4 -rotate-2 hover:rotate-0 transition-transform"
+          >
+            <div
+              class="relative overflow-hidden blob-4 aspect-square shadow-lg"
+            >
+              <img
+                src="images/activity-3.jpg"
+                alt="Story time"
+                class="w-full h-full object-cover"
+              />
+            </div>
+            <figcaption
+              class="sticker absolute top-3 -right-1 bg-white text-orange font-display font-semibold px-4 py-1.5 rounded-full text-sm shadow"
+            >
+              📖 Stories
+            </figcaption>
+          </figure>
+
+          <!-- Nature — small circle, overlaps -->
+          <figure
+            class="relative md:-ml-6 rotate-1 hover:rotate-0 transition-transform"
+          >
+            <div
+              class="relative overflow-hidden rounded-full aspect-square shadow-lg"
+            >
+              <img
+                src="images/activity-4.jpg"
+                alt="Nature and gardening"
+                class="w-full h-full object-cover"
+              />
+            </div>
+            <figcaption
+              class="sticker absolute -top-2 left-2 bg-white text-green font-display font-semibold px-4 py-1.5 rounded-full text-sm shadow"
+            >
+              🌱 Nature
+            </figcaption>
+          </figure>
+
+          <!-- Montessori work — rounded square -->
+          <figure class="relative rotate-1 hover:rotate-0 transition-transform">
+            <div class="relative overflow-hidden rounded-3xl shadow-lg">
+              <img
+                src="images/classroom.jpg"
+                alt="Montessori work in the classroom"
+                class="w-full h-40 md:h-52 object-cover"
+              />
+            </div>
+            <figcaption
+              class="sticker absolute bottom-3 left-3 bg-white text-blue font-display font-semibold px-4 py-1.5 rounded-full text-sm shadow"
+            >
+              🧩 Montessori Work
+            </figcaption>
+          </figure>
+
+          <!-- Outdoor play — wide tile -->
+          <figure
+            class="relative col-span-2 md:col-span-2 -rotate-1 hover:rotate-0 transition-transform"
+          >
+            <div
+              class="relative overflow-hidden rounded-[2rem] blob-2 shadow-lg"
+            >
+              <img
+                src="images/hero-children.jpg"
+                alt="Outdoor play and games"
+                class="w-full h-52 md:h-64 object-cover"
+              />
+            </div>
+            <figcaption
+              class="sticker absolute top-4 left-4 bg-white text-orange font-display font-semibold px-4 py-1.5 rounded-full text-sm shadow"
+            >
+              ⚽ Outdoor Play
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================= -->
+    <!-- SECTION 7: TEACHERS                                           -->
+    <!-- ============================================================= -->
+    <section
+      id="teachers"
+      class="relative bg-blue-light py-24 md:py-32 overflow-hidden"
+    >
+      <!-- wave into section -->
+      <div class="absolute inset-x-0 top-0 wave" style="color: #eaf0fc">
+        <svg
+          viewBox="0 0 1440 80"
+          preserveAspectRatio="none"
+          fill="currentColor"
+        >
+          <path
+            d="M0,40 C180,0 360,80 540,50 C720,20 900,75 1080,45 C1260,15 1350,60 1440,30 L1440,80 L0,80 Z"
+          />
+        </svg>
+      </div>
+      <svg
+        class="absolute top-24 right-10 w-10 text-green/30 anim-bob"
+        viewBox="0 0 40 40"
+        fill="currentColor"
+      >
+        <path
+          d="M20 3l5.2 12.4L38 16l-9.6 8.4L31 37l-11-6.6L9 37l2.6-12.6L2 16l12.8-.6z"
+        />
+      </svg>
+
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 pt-6">
+        <div class="text-center max-w-2xl mx-auto">
+          <span
+            class="inline-flex items-center gap-2 text-green font-display font-semibold text-sm tracking-wide"
+          >
+            <span class="h-0.5 w-8 rounded-full bg-green"></span> Our wonderful
+            team <span class="h-0.5 w-8 rounded-full bg-green"></span>
+          </span>
+          <h2
+            class="mt-4 font-display font-bold text-4xl md:text-5xl xl:text-[3.2rem] leading-[1.1] text-slate-800"
+          >
+            The <span class="text-orange">Grown-Ups</span> Behind the Smiles.
+          </h2>
+          <p
+            class="mt-5 text-slate-500 text-base md:text-lg leading-relaxed max-w-xl mx-auto"
+          >
+            Our teachers don't just teach lessons. They listen, encourage and
+            celebrate every little achievement.
+          </p>
+        </div>
+
+        <div class="mt-16 grid sm:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-6">
+          <!-- teacher 1 -->
+          <div
+            class="group bg-white rounded-[2rem] p-8 text-center shadow-lg shadow-blue/5 hover:-translate-y-2 hover:shadow-2xl transition-all relative overflow-hidden"
+          >
+            <div class="absolute top-6 right-6 text-yellow anim-wiggle">★</div>
+            <div class="relative w-28 h-28 mx-auto">
+              <div
+                class="absolute -inset-2 rounded-full bg-green-light group-hover:rotate-45 transition-transform"
+              ></div>
+              <img
+                src="images/teacher-1.jpg"
+                alt="Ms. Anisha, Montessori Teacher"
+                class="relative w-28 h-28 rounded-full object-cover border-4 border-white shadow-md"
+              />
+            </div>
+            <h3 class="mt-6 font-display font-bold text-2xl text-slate-800">
+              Ms. Anisha
+            </h3>
+            <p
+              class="mt-1 inline-block bg-blue-light text-blue text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide"
+            >
+              Montessori Teacher
+            </p>
+            <p class="mt-4 text-sm text-slate-500 leading-relaxed">
+              "Helping little explorers discover something new every single
+              day."
+            </p>
+          </div>
+
+          <!-- teacher 2 -->
+          <div
+            class="group bg-white rounded-[2rem] p-8 text-center shadow-lg shadow-blue/5 hover:-translate-y-2 hover:shadow-2xl transition-all relative overflow-hidden lg:-mt-6"
+          >
+            <div class="absolute top-6 right-6 text-yellow anim-wiggle">★</div>
+            <div class="relative w-28 h-28 mx-auto">
+              <div
+                class="absolute -inset-2 rounded-full bg-orange-light group-hover:rotate-45 transition-transform"
+              ></div>
+              <img
+                src="images/teacher-2.jpg"
+                alt="Ms. Sapana, Montessori Guide"
+                class="relative w-28 h-28 rounded-full object-cover border-4 border-white shadow-md"
+              />
+            </div>
+            <h3 class="mt-6 font-display font-bold text-2xl text-slate-800">
+              Ms. Sapana
+            </h3>
+            <p
+              class="mt-1 inline-block bg-orange-light text-orange text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide"
+            >
+              Montessori Guide
+            </p>
+            <p class="mt-4 text-sm text-slate-500 leading-relaxed">
+              "Every child is an artist — we just give them the crayons and the
+              courage."
+            </p>
+          </div>
+
+          <!-- teacher 3 -->
+          <div
+            class="group bg-white rounded-[2rem] p-8 text-center shadow-lg shadow-blue/5 hover:-translate-y-2 hover:shadow-2xl transition-all relative overflow-hidden"
+          >
+            <div class="absolute top-6 right-6 text-yellow anim-wiggle">★</div>
+            <div class="relative w-28 h-28 mx-auto">
+              <div
+                class="absolute -inset-2 rounded-full bg-yellow-light group-hover:rotate-45 transition-transform"
+              ></div>
+              <img
+                src="images/teacher-3.jpg"
+                alt="Ms. Pragya, Early Years Teacher"
+                class="relative w-28 h-28 rounded-full object-cover border-4 border-white shadow-md"
+              />
+            </div>
+            <h3 class="mt-6 font-display font-bold text-2xl text-slate-800">
+              Ms. Pragya
+            </h3>
+            <p
+              class="mt-1 inline-block bg-yellow-light text-amber-700 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide"
+            >
+              Early Years Teacher
+            </p>
+            <p class="mt-4 text-sm text-slate-500 leading-relaxed">
+              "I love watching shy smiles become loud, confident giggles."
+            </p>
+          </div>
+        </div>
+
+        <!-- trust chips -->
+        <div
+          class="mt-14 flex flex-wrap items-center justify-center gap-3 text-sm font-semibold"
+        >
+          <span class="bg-white/80 text-green px-4 py-2 rounded-full shadow-sm"
+            >❤️ Caring</span
+          >
+          <span class="bg-white/80 text-blue px-4 py-2 rounded-full shadow-sm"
+            >🎓 Montessori-trained</span
+          >
+          <span class="bg-white/80 text-orange px-4 py-2 rounded-full shadow-sm"
+            >✨ Kind</span
+          >
+          <span class="bg-white/80 text-green px-4 py-2 rounded-full shadow-sm"
+            >🛟 Always watching over</span
+          >
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================= -->
+    <!-- SECTION 8: LITTLE MOMENTS (gallery scrapbook)                 -->
+    <!-- ============================================================= -->
+    <section id="gallery" class="relative bg-cream dots-cream py-24 md:py-32">
+      <!-- wave into section -->
+      <div class="absolute inset-x-0 top-0 wave" style="color: #fff9ed">
+        <svg
+          viewBox="0 0 1440 80"
+          preserveAspectRatio="none"
+          fill="currentColor"
+        >
+          <path
+            d="M0,40 C180,0 360,80 540,50 C720,20 900,75 1080,45 C1260,15 1350,60 1440,30 L1440,80 L0,80 Z"
+          />
+        </svg>
+      </div>
+
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 pt-6">
+        <div class="text-center max-w-2xl mx-auto">
+          <span
+            class="inline-flex items-center gap-2 text-green font-display font-semibold text-sm tracking-wide"
+          >
+            <span class="h-0.5 w-8 rounded-full bg-green"></span> Our scrapbook
+            <span class="h-0.5 w-8 rounded-full bg-green"></span>
+          </span>
+          <h2
+            class="mt-4 font-display font-bold text-4xl md:text-5xl xl:text-[3.2rem] leading-[1.1] text-slate-800"
+          >
+            Little Moments. <span class="text-orange">Big Memories.</span>
+          </h2>
+        </div>
+
+        <!-- irregular collage -->
+        <div class="mt-16 grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-5">
+          <figure
+            class="relative md:col-span-2 md:row-span-2 -rotate-1 hover:rotate-0 transition-transform"
+          >
+            <div
+              class="relative overflow-hidden rounded-[2rem] shadow-lg h-full"
+            >
+              <img
+                src="images/gallery-1.jpg"
+                alt="Little artists painting"
+                class="w-full h-52 md:h-full object-cover"
+              />
+              <div class="tape left-5 top-4"></div>
+            </div>
+            <figcaption
+              class="sticker absolute bottom-4 left-4 bg-white text-orange font-display font-semibold px-4 py-1.5 rounded-full text-sm shadow"
+            >
+              Create 🎨
+            </figcaption>
+          </figure>
+
+          <figure class="relative rotate-2 hover:rotate-0 transition-transform">
+            <div class="relative overflow-hidden rounded-3xl shadow-lg">
+              <img
+                src="images/gallery-2.jpg"
+                alt="Outdoor play"
+                class="w-full h-44 md:h-56 object-cover"
+              />
+            </div>
+            <figcaption
+              class="sticker absolute top-3 right-2 bg-white text-green font-display font-semibold px-4 py-1.5 rounded-full text-sm shadow"
+            >
+              Explore 🌱
+            </figcaption>
+          </figure>
+
+          <figure
+            class="relative -mt-2 -rotate-2 hover:rotate-0 transition-transform"
+          >
+            <div class="relative overflow-hidden blob aspect-square shadow-lg">
+              <img
+                src="images/gallery-3.jpg"
+                alt="Celebrations at school"
+                class="w-full h-full object-cover"
+              />
+            </div>
+            <figcaption
+              class="sticker absolute -bottom-3 left-3 bg-white text-blue font-display font-semibold px-4 py-1.5 rounded-full text-sm shadow"
+            >
+              Smile ❤️
+            </figcaption>
+          </figure>
+
+          <figure class="relative rotate-1 hover:rotate-0 transition-transform">
+            <div
+              class="relative overflow-hidden rounded-full aspect-square shadow-lg"
+            >
+              <img
+                src="images/gallery-4.jpg"
+                alt="Music class"
+                class="w-full h-full object-cover"
+              />
+            </div>
+            <figcaption
+              class="sticker absolute -top-2 right-2 bg-white text-yellow font-display font-semibold px-4 py-1.5 rounded-full text-sm shadow"
+            >
+              Discover 🔎
+            </figcaption>
+          </figure>
+
+          <figure
+            class="relative md:col-span-2 -rotate-1 hover:rotate-0 transition-transform"
+          >
+            <div
+              class="relative overflow-hidden rounded-[2rem] blob-4 shadow-lg"
+            >
+              <img
+                src="images/classroom.jpg"
+                alt="Our bright classroom"
+                class="w-full h-44 md:h-52 object-cover"
+              />
+            </div>
+            <figcaption
+              class="sticker absolute bottom-3 right-4 bg-white text-blue font-display font-semibold px-4 py-1.5 rounded-full text-sm shadow"
+            >
+              Our little world 🏫
+            </figcaption>
+          </figure>
+        </div>
+
+        <!-- polaroid strip -->
+        <div class="mt-10 flex justify-center">
+          <p
+            class="inline-flex items-center gap-2 text-slate-500 text-sm md:text-base"
+          >
+            <span class="text-orange">✦</span> More little moments are made
+            every single day <span class="text-green">✦</span>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================= -->
+    <!-- SECTION 9: PARENT MESSAGE                                     -->
+    <!-- ============================================================= -->
+    <section
+      id="parent"
+      class="relative bg-white py-24 md:py-32 overflow-hidden"
+    >
+      <svg
+        class="absolute top-16 left-10 w-8 text-orange/40 anim-bob"
+        viewBox="0 0 40 40"
+        fill="currentColor"
+      >
+        <path
+          d="M20 3l5.2 12.4L38 16l-9.6 8.4L31 37l-11-6.6L9 37l2.6-12.6L2 16l12.8-.6z"
+        />
+      </svg>
+      <svg
+        class="absolute bottom-16 right-12 w-12 text-green/20 anim-spin-slow"
+        viewBox="0 0 64 64"
+        fill="currentColor"
+      >
+        <circle cx="32" cy="32" r="15" />
+        <g stroke="currentColor" stroke-width="4" stroke-linecap="round">
+          <line x1="32" y1="4" x2="32" y2="12" />
+          <line x1="32" y1="52" x2="32" y2="60" />
+          <line x1="4" y1="32" x2="12" y2="32" />
+          <line x1="52" y1="32" x2="60" y2="32" />
+        </g>
+      </svg>
+
+      <div class="max-w-3xl mx-auto px-4 sm:px-6 text-center relative z-10">
+        <span
+          class="inline-block bg-orange-light text-orange font-display font-semibold text-sm px-5 py-2 rounded-full"
+          >💛 For parents, from the heart</span
+        >
+        <h2
+          class="mt-6 font-display font-bold text-4xl md:text-5xl leading-[1.12] text-slate-800"
+        >
+          Because Choosing a School Is a
+          <span class="text-blue">Big Little Decision</span>.
+        </h2>
+        <p class="mt-6 text-slate-500 text-base md:text-lg leading-relaxed">
+          We know choosing your child's first school is important. That's why we
+          work to create a safe, caring and joyful environment where children
+          can confidently take their first steps into learning — and where you
+          can feel at home too.
+        </p>
+
+        <!-- reassurance chips -->
+        <div
+          class="mt-9 flex flex-wrap justify-center gap-3 text-sm font-semibold"
+        >
+          <span class="bg-green-light text-green px-4 py-2 rounded-full"
+            >🛡️ Safe & supervised</span
+          >
+          <span class="bg-blue-light text-blue px-4 py-2 rounded-full"
+            >👨‍👩‍👧 Parent-friendly</span
+          >
+          <span class="bg-yellow-light text-amber-700 px-4 py-2 rounded-full"
+            >📞 Always reachable</span
+          >
+        </div>
+
+        <a
+          href="#contact"
+          class="mt-10 inline-flex items-center gap-2 bg-orange text-white font-display font-semibold px-9 py-4 rounded-full text-lg shadow-lg shadow-orange/30 hover:bg-orange/90 hover:-translate-y-1 transition-all"
+        >
+          Talk to Our School <span class="arrow-move">→</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- ============================================================= -->
+    <!-- SECTION 10: ADMISSION CTA                                     -->
+    <!-- ============================================================= -->
+    <section
+      id="admission"
+      class="relative bg-green overflow-hidden py-28 md:py-36 dots-green"
+    >
+      <!-- wave into section -->
+      <div class="absolute inset-x-0 top-0 wave" style="color: #079447">
+        <svg
+          viewBox="0 0 1440 80"
+          preserveAspectRatio="none"
+          fill="currentColor"
+        >
+          <path
+            d="M0,45 C180,80 360,10 540,35 C720,60 900,5 1080,30 C1260,55 1350,10 1440,40 L1440,80 L0,80 Z"
+          />
+        </svg>
+      </div>
+
+      <!-- colourful decorations -->
+      <svg
+        class="absolute top-16 left-10 w-20 md:w-24 text-yellow/90 anim-spin-slow"
+        viewBox="0 0 64 64"
+        fill="currentColor"
+      >
+        <circle cx="32" cy="32" r="15" />
+        <g stroke="currentColor" stroke-width="4" stroke-linecap="round">
+          <line x1="32" y1="4" x2="32" y2="12" />
+          <line x1="32" y1="52" x2="32" y2="60" />
+          <line x1="4" y1="32" x2="12" y2="32" />
+          <line x1="52" y1="32" x2="60" y2="32" />
+        </g>
+      </svg>
+      <div
+        class="absolute top-1/3 right-10 md:right-20 w-16 h-16 rounded-full bg-orange/80 anim-bob"
+      ></div>
+      <div
+        class="absolute bottom-24 left-14 md:left-24 w-12 h-12 rounded-full bg-blue/70 anim-floaty"
+      ></div>
+      <div
+        class="absolute bottom-16 right-16 w-10 h-10 rounded-full bg-yellow anim-floaty-x"
+      ></div>
+      <svg
+        class="absolute top-20 right-1/4 w-10 text-yellow anim-bob"
+        viewBox="0 0 40 40"
+        fill="currentColor"
+      >
+        <path
+          d="M20 3l5.2 12.4L38 16l-9.6 8.4L31 37l-11-6.6L9 37l2.6-12.6L2 16l12.8-.6z"
+        />
+      </svg>
+      <svg
+        class="absolute bottom-32 left-1/2 w-8 text-white/70 anim-floaty"
+        viewBox="0 0 40 40"
+        fill="currentColor"
+      >
+        <path
+          d="M20 3l5.2 12.4L38 16l-9.6 8.4L31 37l-11-6.6L9 37l2.6-12.6L2 16l12.8-.6z"
+        />
+      </svg>
+
+      <div class="max-w-3xl mx-auto px-4 sm:px-6 text-center relative z-10">
+        <span
+          class="inline-block bg-white/20 text-white font-display font-semibold text-sm px-5 py-2 rounded-full backdrop-blur"
+          >🎒 Admissions open — 2026 session</span
+        >
+        <h2
+          class="mt-6 font-display font-bold text-4xl md:text-6xl leading-[1.08] text-white"
+        >
+          Ready to Begin Their
+          <span class="text-yellow">Little Adventure</span>?
+        </h2>
+        <p class="mt-6 text-white/90 text-base md:text-lg leading-relaxed">
+          Come visit us, meet our teachers and discover the Bal Batika world. A
+          warm hello is waiting.
+        </p>
+
+        <div
+          class="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4"
+        >
+          <a
+            href="#contact"
+            class="inline-flex items-center gap-2 bg-yellow text-slate-900 font-display font-semibold px-9 py-4 rounded-full text-lg shadow-xl shadow-black/10 hover:-translate-y-1 hover:bg-yellow/90 transition-all"
+          >
+            Plan a Visit <span class="arrow-move">→</span>
+          </a>
+          <a
+            href="#contact"
+            class="inline-flex items-center gap-2 bg-white/15 text-white border-2 border-white/40 backdrop-blur font-display font-semibold px-9 py-4 rounded-full text-lg hover:bg-white hover:text-green transition-all"
+          >
+            Ask About Admission
+          </a>
+        </div>
+
+        <!-- tiny reassurance -->
+        <p class="mt-8 text-white/70 text-sm">
+          No fees. No pressure. Just a friendly visit. ☺
+        </p>
+      </div>
+
+      <!-- wave out to white -->
+      <div class="absolute inset-x-0 bottom-0 wave" style="color: #fff">
+        <svg
+          viewBox="0 0 1440 80"
+          preserveAspectRatio="none"
+          fill="currentColor"
+        >
+          <path
+            d="M0,40 C180,0 360,80 540,50 C720,20 900,75 1080,45 C1260,15 1350,60 1440,30 L1440,80 L0,80 Z"
+          />
+        </svg>
+      </div>
+    </section>
+
+    <!-- ============================================================= -->
+    <!-- SECTION 11: CONTACT                                           -->
+    <!-- ============================================================= -->
+    <section id="contact" class="relative bg-white py-24 md:py-32">
+      <div
+        class="max-w-6xl mx-auto px-4 sm:px-6 grid lg:grid-cols-2 gap-14 lg:gap-20 items-center"
+      >
+        <!-- info -->
+        <div>
+          <span
+            class="inline-flex items-center gap-2 text-blue font-display font-semibold text-sm tracking-wide"
+          >
+            <span class="h-0.5 w-8 rounded-full bg-blue"></span> Say hello
+          </span>
+          <h2
+            class="mt-4 font-display font-bold text-4xl md:text-5xl leading-[1.1] text-slate-800"
+          >
+            Come and Visit <span class="text-green">Our Little World</span>.
+          </h2>
+          <p class="mt-5 text-slate-500 text-base md:text-lg leading-relaxed">
+            We'd love to meet you and your little explorer. Reach out anytime.
+          </p>
+
+          <ul class="mt-9 space-y-5">
+            <li class="flex items-start gap-4">
+              <span
+                class="shrink-0 w-12 h-12 rounded-2xl bg-green-light flex items-center justify-center text-xl"
+                >📍</span
+              >
+              <div>
+                <p class="font-semibold text-slate-800">Ranipauwa, Pokhara</p>
+                <p class="text-sm text-slate-500">
+                  Global Bal Batika Montessori Pre-School, Kaski, Nepal
+                </p>
+              </div>
+            </li>
+            <li class="flex items-start gap-4">
+              <span
+                class="shrink-0 w-12 h-12 rounded-2xl bg-orange-light flex items-center justify-center text-xl"
+                >📞</span
+              >
+              <div>
+                <p class="font-semibold text-slate-800">+977-61-4XXXXXX</p>
+                <p class="text-sm text-slate-500">School phone (weekdays)</p>
+              </div>
+            </li>
+            <li class="flex items-start gap-4">
+              <span
+                class="shrink-0 w-12 h-12 rounded-2xl bg-blue-light flex items-center justify-center text-xl"
+                >✉️</span
+              >
+              <div>
+                <p class="font-semibold text-slate-800">
+                  hello@balbatika.edu.np
+                </p>
+                <p class="text-sm text-slate-500">
+                  We usually reply within a day
+                </p>
+              </div>
+            </li>
+            <li class="flex items-start gap-4">
+              <span
+                class="shrink-0 w-12 h-12 rounded-2xl bg-yellow-light flex items-center justify-center text-xl"
+                >🕘</span
+              >
+              <div>
+                <p class="font-semibold text-slate-800">
+                  Sun – Fri, 9:00 AM – 4:00 PM
+                </p>
+                <p class="text-sm text-slate-500">
+                  School hours · Saturday closed
+                </p>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <!-- map placeholder -->
+        <div class="relative mx-auto w-full max-w-md lg:max-w-none">
+          <div
+            class="absolute -inset-3 rounded-[2.5rem] bg-green-light blob-2"
+          ></div>
+          <div
+            class="relative rounded-[2rem] bg-white overflow-hidden shadow-xl border border-green/10"
+          >
+            <div class="relative h-72 md:h-80 dots-cream">
+              <!-- soft streets -->
+              <div class="absolute inset-0 opacity-20">
+                <svg
+                  class="w-full h-full"
+                  viewBox="0 0 400 300"
+                  preserveAspectRatio="none"
+                  fill="none"
+                >
+                  <path
+                    d="M0 90 Q 100 70 200 100 T 400 80"
+                    stroke="#17479E"
+                    stroke-width="6"
+                  />
+                  <path
+                    d="M60 0 Q 90 120 70 300"
+                    stroke="#079447"
+                    stroke-width="5"
+                  />
+                  <path
+                    d="M250 0 Q 270 140 240 300"
+                    stroke="#F15A24"
+                    stroke-width="5"
+                  />
+                  <path
+                    d="M0 220 Q 140 190 300 230 T 400 210"
+                    stroke="#F9C74F"
+                    stroke-width="5"
+                  />
+                </svg>
+              </div>
+              <!-- pin -->
+              <div
+                class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-full text-center"
+              >
+                <div class="relative w-12 h-12 mx-auto">
+                  <span
+                    class="absolute inset-0 rounded-full bg-green/20 animate-ping"
+                  ></span>
+                  <span
+                    class="relative w-12 h-12 rounded-full bg-green text-white flex items-center justify-center shadow-lg"
+                    >📍</span
+                  >
+                </div>
+                <span
+                  class="sticker bg-white text-green font-display font-semibold text-sm px-4 py-1.5 rounded-full shadow mt-3 block"
+                  >Global Bal Batika, Ranipauwa</span
+                >
+              </div>
+              <!-- label -->
+              <div
+                class="absolute bottom-3 left-3 bg-white/90 backdrop-blur text-xs text-slate-500 px-3 py-1.5 rounded-full shadow-sm"
+              >
+                🗺️ Map placeholder — Pokhara, Kaski
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================= -->
+    <!-- FOOTER                                                        -->
+    <!-- ============================================================= -->
+    <footer class="relative bg-green-dark text-white overflow-hidden">
+      <!-- wave into footer -->
+      <div class="absolute inset-x-0 top-0 wave" style="color: #056b35">
+        <svg
+          viewBox="0 0 1440 80"
+          preserveAspectRatio="none"
+          fill="currentColor"
+        >
+          <path
+            d="M0,45 C180,80 360,10 540,35 C720,60 900,5 1080,30 C1260,55 1350,10 1440,40 L1440,80 L0,80 Z"
+          />
+        </svg>
+      </div>
+      <svg
+        class="absolute bottom-10 left-8 w-8 text-white/20 anim-bob"
+        viewBox="0 0 40 40"
+        fill="currentColor"
+      >
+        <path
+          d="M20 3l5.2 12.4L38 16l-9.6 8.4L31 37l-11-6.6L9 37l2.6-12.6L2 16l12.8-.6z"
+        />
+      </svg>
+
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 pt-24 pb-10">
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-12 items-start">
+          <!-- brand -->
+          <div>
+            <a href="#home" class="flex items-center gap-3">
+              <img
+                src="images/logo.png"
+                alt="Global Bal Batika Montessori logo"
+                class="w-14 h-14 rounded-full bg-white p-1 shadow-md"
+              />
+              <span class="leading-tight">
+                <span class="block font-display font-bold text-xl text-white"
+                  >Global Bal Batika</span
+                >
+                <span
+                  class="block text-[11px] tracking-[0.18em] uppercase text-yellow font-semibold"
+                  >Montessori Pre-School</span
+                >
+              </span>
+            </a>
+            <p class="mt-5 text-white/80 italic font-display text-lg">
+              Little hands. Curious minds. Big dreams.
+            </p>
+            <p class="mt-3 text-sm text-white/60">
+              A safe, caring and creative place for little explorers in
+              Ranipauwa, Pokhara. Established 2016.
+            </p>
+          </div>
+
+          <!-- links -->
+          <div class="lg:justify-self-center">
+            <h3 class="font-display font-bold text-lg text-yellow">Explore</h3>
+            <ul class="mt-5 grid grid-cols-2 gap-x-10 gap-y-3 text-sm">
+              <li>
+                <a href="#story" class="hover:text-yellow transition-colors"
+                  >Our Story</a
+                >
+              </li>
+              <li>
+                <a href="#learning" class="hover:text-yellow transition-colors"
+                  >Learning</a
+                >
+              </li>
+              <li>
+                <a href="#teachers" class="hover:text-yellow transition-colors"
+                  >Teachers</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#adventures"
+                  class="hover:text-yellow transition-colors"
+                  >Activities</a
+                >
+              </li>
+              <li>
+                <a href="#gallery" class="hover:text-yellow transition-colors"
+                  >Gallery</a
+                >
+              </li>
+              <li>
+                <a href="#contact" class="hover:text-yellow transition-colors"
+                  >Contact</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- quick hello -->
+          <div class="lg:justify-self-end">
+            <h3 class="font-display font-bold text-lg text-yellow">
+              Come say hi
+            </h3>
+            <ul class="mt-5 space-y-3 text-sm text-white/80">
+              <li class="flex items-center gap-2">
+                📍 Ranipauwa, Pokhara, Nepal
+              </li>
+              <li class="flex items-center gap-2">📞 +977-61-4XXXXXX</li>
+              <li class="flex items-center gap-2">✉️ hello@balbatika.edu.np</li>
+            </ul>
+            <a
+              href="#admission"
+              class="mt-6 inline-flex items-center gap-2 bg-yellow text-slate-900 font-display font-semibold px-6 py-3 rounded-full hover:bg-white transition-all"
+            >
+              Plan a Visit <span class="arrow-move">→</span>
+            </a>
+          </div>
+        </div>
+
+        <div
+          class="mt-12 pt-6 border-t border-white/15 flex flex-col sm:flex-row items-center justify-between gap-3 text-sm text-white/60"
+        >
+          <p>
+            © 2026 Global Bal Batika Montessori Pre-School. All rights reserved.
+          </p>
+          <p class="flex items-center gap-1.5">
+            Made with <span class="text-orange">❤</span> in Pokhara
+          </p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
